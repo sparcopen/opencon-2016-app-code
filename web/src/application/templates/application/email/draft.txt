@@ -1,0 +1,17 @@
+<p>Dear {{ email }},</p>
+
+<p>Thanks for starting an application for OpenCon 2016. This message confirms that your draft application is saved in our system.</p>
+
+<p><strong>You can resume your application at the following secure link:</strong><br/>
+{# #todo -- fix hardcoded server #}https://secure.opencon2016.org{% url 'application:access_draft' uuid %}</p>
+
+<p>Please remember to submit your application before the application deadline listed in the instructions of your application form. Unsubmitted drafts will be considered final after this date.</p>
+
+<p>Thanks again for your interest, and we look forward to receiving your completed application soon.</p>
+
+<p>Sincerely,</p>
+
+<p>The OpenCon Organizing Committee<br/>
+<a href="http://www.opencon2016.org">http://www.opencon2016.org</a></p>
+
+<p>Please DO NOT reply to this email. You can get answers to questions and find out how to contact us at our FAQ page <a href="http://www.opencon2016.org">http://www.opencon2016.org/faq</a></p>

@@ -1,0 +1,39 @@
+<p>Dear {% if nickname %}{{ nickname }}{% else %}{{ first_name }}{% endif %},</p>
+
+<p>Thank you for applying to OpenCon 2016. This e-mail confirms that we have successfully received your application. We have attached a copy of the information you submitted, for your records.</p>
+
+<p>If you applied before the general deadline of July 11, application decisions will be sent via e-mail the week of August 1. If you applied for a scholarship sponsored by a university or organization, check with the sponsor for more information on when decisions will be made. For more information, see our FAQ at <a href="http://opencon2016.org/faq">http://opencon2016.org/faq</a></p>
+
+<p>OpenCon is more than a conference. It’s a community supported through active forums, programs and events that are open to everyone – and we encourage you to get involved right away. Below are some ideas to get started.</p>
+
+<p><strong>Top 4 Ways to Get Involved with OpenCon</strong></p>
+
+<p><strong>(1) RSVP to attend OpenCon Live.</strong> Even if you are not invited to attend in person, you can still participate remotely in OpenCon 2016 through OpenCon Live. Let us know that you plan to participate in OpenCon 2016 either way by submitting your RSVP: <a href="http://www.opencon2016.org/opencon_2016_live">http://www.opencon2016.org/opencon_2016_live</a></p>
+
+<p><strong>(2) Host or attend an OpenCon Satellite Event.</strong> You can help build the movement by organizing or attending a satellite event. Satellites can be of any size, in any place, at any time and are open to anyone. They typically combine content, themes and ideas from the main meeting with locally arranged activities, and are a great way to get more involved. Sign up to host or attend a Satellite Event here: <a href="http://www.opencon2016.org/satellite">http://www.opencon2016.org/satellite</a></p>
+
+<p><strong>(3) Explore the OpenCon Community.</strong> OpenCon brings together students, early career researchers and more from across the world for discussion and action around Open Access, Open Data and Open Education. Connect with the global OpenCon community through our Discussion List, Community Calls and Webcasts. More information here: <a href="http://www.opencon2016.org/community">http://www.opencon2016.org/community</a></p>
+
+<p><strong>(4) Share your reasons for applying to OpenCon online.</strong> In the spirit of openness, we encourage everyone who applies to share why Open is important to you, and how you would use your experience at OpenCon to have an impact. You can use your answers to the short answer questions in your application as a starting point. Send your blog post or other link to us on Facebook, Twitter or at <a href="http://www.opencon2016.org">http://www.opencon2016.org</a></p>
+
+<p>We look forward to staying in touch, and we hope to see you get involved in one or more of these activities!</p>
+
+<p>Sincerely,</p>
+
+<p>The OpenCon Organizing Committee<br/>
+<a href="http://www.opencon2016.org/">http://www.opencon2016.org/</a></p>
+
+<p>Please do not reply to this email. You can get answers to questions and find out how to contact us at our FAQ page <a href="http://opencon2016.org/faq">http://opencon2016.org/faq</a></p>
+
+<hr/>
+
+<div style="color: #cccccc">
+<p><strong>The following data has been saved on our servers:</strong></p>
+
+<ul>
+{% for field in object.get_data %}
+    <li><em>{{ field.title }}</em><br/>
+    {{ field.content }}</li>
+{% endfor %}
+<ul>
+</div>

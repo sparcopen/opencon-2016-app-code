@@ -1,0 +1,32 @@
+{% extends "rating/base.html" %}
+
+{% block content %}
+    {% if object_list %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Affiliation</th>
+                <th>Rating</th>
+                <th>Acceptance</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'rating:previous' object.pk %}">{{ object.application.full_name }}</a></td>
+                <td>{{ object.application.residence }}</td>
+                <td>{{ object.application.institution }}</td>
+                <td>{{ object.rating }}</td>
+                <td>{{ object.acceptance }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <h1>You haven't rated any application yet.</h1>
+    {% endif %}
+{% endblock %}

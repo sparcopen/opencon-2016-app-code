@@ -1,0 +1,30 @@
+{% extends "rating/base.html" %}
+
+{% block content %}
+    {% if ranking %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name / Nickname</th>
+                <th>Average Score</th>
+                <th>Standard Deviation</th>
+                <th>Total Ratings</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in ranking %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ user }}</td>
+                <td>{{ user.avg2|floatformat:2 }}</td>
+                <td>{{ user.standard_deviation2|floatformat:2 }}</td>
+                <td>{{ user.finished_count2 }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <h1>No one has rated any application yet. Be the first!</h1>
+    {% endif %}
+{% endblock %}

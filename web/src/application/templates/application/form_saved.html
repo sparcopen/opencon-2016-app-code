@@ -1,0 +1,19 @@
+{% extends 'application/base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+    <h3>Application Saved</h3>
+    <p>Thanks for starting your application for OpenCon 2016. This message confirms that your draft application has been saved.<p>
+    <p>
+        <strong>You can resume your application at the following secure link:</strong><br/>
+        <a href="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{% url 'application:access_draft' draft.uuid %}">
+            {% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{% url 'application:access_draft' draft.uuid %}
+        </a>
+    </p>
+    <p>Please save this link for your records. You can also retrieve it by visiting the application form and entering your e-mail address.</p>
+    <p>Note that draft applications not submitted by the relevant application deadline will be considered final. See the instructions at the top of your draft for more information about the deadline.</p>
+    <p>If you have any questions, please visit our <a href="http://www.opencon2016.org/faq">FAQ</a>.</p>
+    </div>
+{% endblock %}

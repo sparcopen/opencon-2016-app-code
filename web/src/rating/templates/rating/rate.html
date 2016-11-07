@@ -1,0 +1,59 @@
+{% extends "rating/base.html" %}
+{% load bootstrap %}
+{% block content %}
+    {% include 'rating/popup_skip.html' %}
+
+    <div class="col-md-6 overflow">
+        {% for field in application_data %}
+        <div class="oc-row">
+            <div id="{{field.name}}-title">
+                <strong>{{field.title}}</strong>
+            </div>
+            <div id="{{field.name}}-content">
+                <p>{{field.content}}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% if all_reviews %}
+            <hr>
+            <h2>All reviews</h2>
+            {% for review in all_reviews %}
+                <hr>
+                <h4>Creator</h4>
+                <p>{{ review.created_by }}</p>
+
+                <h4>Rating</h4>
+                <p>{{ review.rating }}</p>
+
+                <h4>Acceptance</h4>
+                <p>{{ review.acceptance }}</p>
+
+                {% if review.acceptance_reason %}
+                <h4>Reason for acceptance</h4>
+                <p>{{ review.acceptance_reason }}</p>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="col-md-6 overflow">
+        <form role="form" method="post">
+            {% csrf_token %}
+            {{ forms.rate|bootstrap }}
+            <input class="btn btn-large btn-success" type="submit" value="Submit Rating" />
+            <a href="#" class="btn btn-large btn-danger" id="skip">Skip</a>
+        </form>
+
+        {% if user.organizer %}
+            <hr>
+            <strong>If you change the status of application the form above will not be saved.</strong>
+            <hr>
+            <form role="form" method="post">
+                {% csrf_token %}
+                {{ forms.status|bootstrap }}
+                <input class="btn btn-md btn-danger" type="submit" value="Change Status" />
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

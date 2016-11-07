@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    <div class="container">
+    <nav>
+        <ul class="nav nav-pills">
+            {% if user.is_round_1_reviewer %}
+                <li class="nav-item" style="background: lightgreen"><a href="{% url 'rating:rate_round1' %}">R1: Rate Applications</a></li>
+                <li class="nav-item" style="background: lightgreen"><a href="{% url 'rating:previous' %}">R1: My Ratings</a></li>
+                <li class="nav-item" style="background: lightgreen"><a href="{% url 'rating:stats' %}">R1: Leaderboard</a></li>
+            {% endif %}
+            {% if user.is_round_2_reviewer %}
+                <li class="nav-item" style="background: lightyellow"><a href="{% url 'rating:rate_round2' %}">R2: Rate Applications</a></li>
+                <li class="nav-item" style="background: lightyellow"><a href="{% url 'rating:all2' %}">R2: All Applications</a></li>
+                <li class="nav-item" style="background: lightyellow"><a href="{% url 'rating:stats2' %}">R2: Leaderboard</a></li>
+            {% endif %}
+            <li class="nav-item btn-danger"><a href="{% url 'rating:logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+    </div>
+    <hr>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+    <div class="container">
+    <hr/>
+    <p>Logged in as {{ user.email }}</p>
+    </div>
+{% endblock %}

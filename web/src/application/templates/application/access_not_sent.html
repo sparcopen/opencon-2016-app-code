@@ -1,0 +1,15 @@
+{% extends 'application/base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+        <h3>Access not sent</h3>
+        <p>Unfortunately we couldn't send your access link.</p>
+        <h6>Possible reasons:</h6>
+        <ul>
+            <li>We sent it to you just a couple of minutes ago.</li>
+            <li>There is currently a problem with sending e-mails.</li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Draft Application Found</h4>
+      </div>
+      <div class="modal-body">
+        <p>A draft application for this e-mail address already exists in our system. If you applied in 2015, this draft has automatically been generated from your previous application. To access your draft, please click “Access Draft” and we will e-mail you a secure link where you can resume your application. <a href="{% url 'application:send_email' draft.email %}" style="background-color: yellow">Access Draft</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

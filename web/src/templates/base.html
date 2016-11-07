@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}OpenCon2016 Application Form{% endblock %}</title>
+    <meta property="og:image" content="{% static 'img/opencon2016-apply.png' %}">
+    <meta property="og:title" content="Apply Now for OpenCon2016">
+    <meta property="og:description" content="OpenCon 2016 is November 12-14 in Washington DC and will bring together students and early career academic professionals from around the world who want to advance Open Access, Open Education, and Open Data. Apply now to attend and request a travel scholarship.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/png" />
+
+    <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <style>
+
+        .no-js #loader { display: none;  }
+        .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(/static/img/spiffy.gif) center no-repeat #fff;
+        }
+        ul{
+            padding-left: 20px;
+        }
+        ul li{
+            list-style-type: none;
+        }
+        .form-group{
+            margin-bottom: 45px;
+        }
+        .overlap{
+            top: 120px;
+            padding: 30px;
+            position:absolute;
+            background-color: rgba(99, 99, 99, 0.4);
+            left: -5%;
+            width: 110%;
+            height: 98.8%;
+            z-index: 10;
+        }
+        #check_mail{
+            position: absolute;
+            top: 25px;
+            right: -100px;
+        }
+        @media screen and (min-width: 992px){
+            .overflow{
+                overflow-y: scroll;
+                height: 70vh;
+            }
+        }
+        .table_highlight_green{
+            background: #cfc;
+        }
+        .table_highlight_red{
+            background: #ffeeee;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-61115389-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+</head>
+<body>
+    {% block body_start %} {% endblock %}
+    {% block menu %} {% endblock %}
+    <div class="container">
+    {% block content %}
+
+    {% endblock %}
+    </div>
+
+    {% block footer %}
+
+    {% endblock %}
+</body>
+</html>

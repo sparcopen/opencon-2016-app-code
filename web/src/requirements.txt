@@ -1,0 +1,11 @@
+Django==1.9.11
+django-autocomplete-light==3.2.1
+git+git://github.com/ZoltanOnody/django-bootstrap-form.git@4ae507a8ef09da5fe7825d5e74f3dd6d8950550e
+# BEFORE PATCH: https://web.archive.org/web/20161107194502/https://codeload.github.com/ZoltanOnody/django-bootstrap-form/zip/3b685646ac3df755e705f4d0f5989e3900a2b74e
+# AFTER PATCH: https://web.archive.org/web/20161107194554/https://codeload.github.com/ZoltanOnody/django-bootstrap-form/zip/4ae507a8ef09da5fe7825d5e74f3dd6d8950550e
+django-dotenv==1.4.1
+django-select-multiple-field==0.4.2
+Pillow==3.4.2
+pytz==2016.7
+whitenoise==3.2.2
+gunicorn==19.6.0
